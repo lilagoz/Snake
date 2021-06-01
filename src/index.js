@@ -22,13 +22,6 @@ class Snake {
         this.field = new Rect(0, 0, this.fieldWidth * this.bitSize, this.fieldHeight * this.bitSize)
         this.fieldOffsetX = (this.width - this.fieldWidth * this.bitSize) / 2
         this.fieldOffsetY =  this.bitSize * 2; //(this.height - this.fieldHeight * this.bitSize) / 2
-        /*
-        this.buttonLeft = new Button('LEFT', new Rect(0, this.fieldOffsetY + this.field.height + 1, this.width / 3, this.height))
-        this.buttonRight = new Button('RIGHT', new Rect(this.width / 3 * 2, this.fieldOffsetY + this.field.height + 1, this.width, this.height))
-        this.buttonUp = new Button('UP', new Rect(this.width / 3, this.fieldOffsetY + this.field.height + 1, this.width / 3 * 2, this.fieldOffsetY + this.field.height + this.buttonLeft.rect.height / 2))
-        this.buttonDown = new Button('DOWN', new Rect(this.width / 3, this.fieldOffsetY + this.field.height + this.buttonLeft.rect.height / 2,this.width / 3 * 2, this.height))
-        */
-        
 
         this.buttons = new Set()
         this.buttons.add(new Button('LEFT', 'ArrowLeft', new Rect(0, this.fieldOffsetY + this.field.height + 1, this.width / 3, this.height)))
@@ -234,21 +227,7 @@ class Snake {
         if(this.inGame) {
             bufferContext.lineWidth = this.bitSize/25
             bufferContext.strokeStyle = this.fgColor    
-            /*
-            bufferContext.rect( this.buttonLeft.X1, this.buttonLeft.Y1, this.buttonLeft.width, this.buttonLeft.height )
-            bufferContext.rect( this.buttonRight.X1, this.buttonRight.Y1, this.buttonRight.width, this.buttonRight.height )
-            bufferContext.rect( this.buttonUp.X1, this.buttonUp.Y1, this.buttonUp.width, this.buttonUp.height )
-            bufferContext.rect( this.buttonDown.X1, this.buttonDown.Y1, this.buttonDown.width, this.buttonDown.height )            
-            bufferContext.stroke()
-            let leftText = bufferContext.measureText('LEFT')
-            let rightText = bufferContext.measureText('RIGHT')
-            let upText = bufferContext.measureText('UP')
-            let downText = bufferContext.measureText('DOWN')
-            bufferContext.strokeText(`LEFT`, (this.buttonLeft.width - leftText.width) / 2, this.buttonLeft.Y1 + this.buttonLeft.height / 2 + this.bitSize / 2 )
-            bufferContext.strokeText(`RIGHT`, (this.buttonRight.width - rightText.width) / 2, this.buttonRight.Y1 + this.buttonRight.height / 2 + this.bitSize / 2 )
-            bufferContext.strokeText(`UP`, (this.buttonUp.width - upText.width) / 2, this.buttonUp.Y1 + this.buttonUp.height / 2 + this.bitSize / 2 )
-            bufferContext.strokeText(`DOWN`, (this.buttonDown.width - downText.width) / 2, this.buttonDown.Y1 + this.buttonDown.height / 2 + this.bitSize / 2 )
-            */
+
             this.buttons.forEach(button=>this.drawButton(button,bufferContext))
  
         } else {
