@@ -1,4 +1,4 @@
-const {Snake} = require('./../src/index')
+const {Snake} = require('../src/Snake')
 
 document.addEventListener('DOMContentLoaded', ()=>{
     //const element = document.querySelector('body')

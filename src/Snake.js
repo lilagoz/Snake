@@ -31,7 +31,7 @@ class Snake {
 
         this.css = document.createElement('style')
         this.css.setAttribute('type','text/css')
-        this.css.innerText = '.game{border:1px solid black;width:100%;height:auto;margin:0;padding:0;}'
+        this.css.innerText = '.game{border:1px solid black;width:100%;height:auto;margin:0;padding:0;position:fixed;top:0;left:0;z-index:99999;}'
         
         document.head.append(this.css);
 
