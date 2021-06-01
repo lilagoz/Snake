@@ -1,0 +1,25 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "nanoGames Snake",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilagoz/Snake.git"
+  },
+  "author": "KiiGab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lilagoz/Snake/issues"
+  },
+  "homepage": "https://github.com/lilagoz/Snake#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
+  "dependencies": {
+    "browserify": "^17.0.0"
+  }
+}

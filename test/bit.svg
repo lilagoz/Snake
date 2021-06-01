@@ -1,0 +1,26 @@
+<svg
+   width="10"
+   height="10"
+   viewBox="0 0 10 10"
+   version="1.1"
+   id="svg4"
+   shape-rendering="crispEdges"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <rect
+     x="1"
+     y="1"
+     width="8"
+     height="8"
+     style="fill:#798575;stroke-width:1;stroke:#14181B"
+     id="rect2" />
+  <rect
+     style="fill:#798575;stroke:#14181b;fill-opacity:1;stroke-opacity:1"
+     id="rect32"
+     width="4"
+     height="4"
+     x="3"
+     y="3" />
+</svg>
