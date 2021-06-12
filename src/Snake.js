@@ -59,23 +59,34 @@ class Snake {
         //svg.setAttribute('shape-rendering','crispEdges')
         svg.setAttribute('preserveAspectRatio','none')
         svg.innerHTML = innerText
+        //this.parent.append(svg)
         const svgDef = new XMLSerializer().serializeToString(svg);
-        let blob = new Blob([svgDef],{type:'image/svg+xml;charset=utf-8'})
-        const url = URL.createObjectURL(blob)
+        //let blob = new Blob([svgDef],{type:'image/svg+xml;charset=utf-8'})
+        //const url = URL.createObjectURL(blob)
+        const url = 'data:image/svg+xml;base64,'+ btoa(svgDef)
         let img = new Image()//document.createElement('img')
-        img.addEventListener('load', () => URL.revokeObjectURL(url), {once: true});
+        /*
+        img.addEventListener('error',error=>{
+            console.log('img error',error)
+        })
+        img.onerror = error=>{
+            console.log('img error',error)
+        }*/
         img.src = url
         img.width = this.bitSize
         img.height = this.bitSize
+        //this.parent.append(img)
         let promise = new Promise((resolve,reject)=>{
-            img.onload = () => {
+            img.addEventListener('load', () => {
+                //URL.revokeObjectURL(url)
                 resolve(img)
-            }
+            }, {once: true});
         })        
         return promise
     }
     async initGraphics(){
         this.theCanvas = document.createElement('canvas')
+        console.log("theCanvas",this.theCanvas);
         this.theContext = this.theCanvas.getContext('2d')
         this.theCanvas.setAttribute('width',this.width)
         this.theCanvas.setAttribute('height',this.height)
@@ -210,6 +221,8 @@ class Snake {
 
         //snake
         for (const bit of this.snake) {
+            const spriteBit =  this.sprite['bit'] 
+            console.log('sprite bit',spriteBit)
             bufferContext.drawImage(this.sprite['bit'], bit.X * this.bitSize + this.fieldOffsetX, bit.Y * this.bitSize + this.fieldOffsetY);
         }
 

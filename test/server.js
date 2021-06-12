@@ -17,8 +17,7 @@ app.get('/bundle.js', (req,res)=>{
         console.error("Valami baj lehet.", error)
         res.send('/* Nincs itt semmi */')    
       })
-      .pipe(res)
-      .cat
+      .pipe(res)      
   } catch (error) {
     res.send('/* Nincs itt semmi */')    
     console.error("Valami baj lehet.", error)
