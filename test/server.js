@@ -1,29 +1,29 @@
 const express = require('express')
-const app = express()
+const app = express() 
 const port = 8080
 
 const browserify = require('browserify')
 
-app.use(express.static('test'))
+app.use(express.static('public'))
 
 app.get('/bundle.js', (req,res)=>{
-  try {
-    browserify('./test/test.js', {
-      debug: true
-    })
-      //.add()  
-      .bundle()
-      .on('error',error=>{
-        console.error("Valami baj lehet.", error)
+    try {
+        browserify('./test/test.js', {
+            debug: true
+        })
+        //.add()  
+            .bundle()
+            .on('error',error=>{
+                console.error('Valami baj lehet.', error)
+                res.send('/* Nincs itt semmi */')    
+            })
+            .pipe(res)      
+    } catch (error) {
         res.send('/* Nincs itt semmi */')    
-      })
-      .pipe(res)      
-  } catch (error) {
-    res.send('/* Nincs itt semmi */')    
-    console.error("Valami baj lehet.", error)
-  }
+        console.error('Valami baj lehet.', error)
+    }
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://localhost:${port}`)
 })

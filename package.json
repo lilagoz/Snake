@@ -4,7 +4,7 @@
   "description": "nanoGames Snake",
   "main": "src/Snake.js",
   "scripts": {
-    "test": "node ./test/server.js"
+    "serve": "node ./test/server.js"
   },
   "repository": {
     "type": "git",
